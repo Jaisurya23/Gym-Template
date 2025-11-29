@@ -19,7 +19,7 @@ body {
 header {
     background: #111;
     color: white;
-    padding: 20px 40px;
+    padding: 20px 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -27,10 +27,11 @@ header {
     top: 0;
     z-index: 100;
     box-shadow: 0 3px 5px rgba(0,0,0,0.3);
+    flex-wrap: wrap;
 }
 
 header h1 {
-    font-size: 28px;
+    font-size: 2rem;
     font-weight: 700;
     animation: fadeDown 1s ease-in-out;
 }
@@ -38,7 +39,8 @@ header h1 {
 nav ul {
     display: flex;
     list-style: none;
-    gap: 30px;
+    gap: 1.5rem;
+    flex-wrap: wrap;
 }
 
 nav ul li a {
@@ -79,20 +81,21 @@ nav ul li a:hover {
     position: relative;
     z-index: 2;
     animation: fadeUp 1s ease-in-out;
+    padding: 0 1rem;
 }
 
 .hero h2 {
-    font-size: 58px;
+    font-size: clamp(2rem, 5vw, 4rem);
     font-weight: 800;
 }
 
 .hero p {
     margin: 20px 0;
-    font-size: 22px;
+    font-size: clamp(1rem, 2vw, 1.5rem);
 }
 
 .btn {
-    padding: 12px 25px;
+    padding: 0.8rem 2rem;
     background: #ff5722;
     color: white;
     border-radius: 6px;
@@ -108,27 +111,27 @@ nav ul li a:hover {
 
 /* ======== SECTIONS ======== */
 section {
-    padding: 80px 60px;
+    padding: clamp(2rem, 5vw, 6rem) 5%;
     background: white;
-    margin: 40px 0;
+    margin: 2rem 0;
 }
 
 h2 {
     text-align: center;
-    font-size: 36px;
-    margin-bottom: 40px;
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 2rem;
 }
 
 /* ======== PROGRAMS ======== */
 .program-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .program {
     background: white;
-    padding: 30px;
+    padding: 2rem;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -152,13 +155,13 @@ h2 {
 /* ======== TRAINERS ======== */
 .trainer-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
 }
 
 .trainer {
     background: white;
-    padding: 25px;
+    padding: 2rem;
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
@@ -182,13 +185,13 @@ h2 {
 /* ======== PRICING ======== */
 .price-list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
 }
 
 .price-box {
     background: white;
-    padding: 30px;
+    padding: 2rem;
     text-align: center;
     border-radius: 12px;
     border: 2px solid #ff5722;
@@ -203,10 +206,10 @@ h2 {
 
 /* ======== CONTACT FORM ======== */
 form {
-    width: 60%;
+    max-width: 600px;
     margin: auto;
     background: #f8f8f8;
-    padding: 40px;
+    padding: 2rem;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
@@ -222,8 +225,8 @@ form label {
 form input,
 form textarea {
     width: 100%;
-    padding: 14px;
-    margin: 15px 0;
+    padding: 0.8rem;
+    margin: 0.8rem 0;
     border: 1px solid #ccc;
     border-radius: 6px;
     outline: none;
@@ -236,7 +239,7 @@ form textarea:focus {
 }
 
 form button {
-    padding: 14px 30px;
+    padding: 0.8rem;
     background: #ff5722;
     border: none;
     color: white;
@@ -244,7 +247,7 @@ form button {
     cursor: pointer;
     border-radius: 6px;
     width: 100%;
-    font-size: 16px;
+    font-size: 1rem;
     transition: 0.3s;
 }
 
@@ -256,7 +259,7 @@ form button:hover {
 /* ======== FOOTER ======== */
 footer {
     text-align: center;
-    padding: 20px;
+    padding: 1.5rem 5%;
     background: #111;
     color: white;
 }
@@ -277,29 +280,11 @@ footer {
     to { opacity: 1; transform: scale(1); }
 }
 
-/* ======== RESPONSIVE ======== */
-@media (max-width: 900px) {
-    .program-list,
-    .trainer-list,
-    .price-list {
-        grid-template-columns: 1fr;
-    }
-
-    form {
-        width: 90%;
-    }
-
-    header {
-        flex-direction: column;
-        gap: 15px;
-        text-align: center;
-    }
-}
 /* ======== CLASS SCHEDULE SECTION ======== */
 .schedule-section {
     background: url("https://static.vecteezy.com/system/resources/thumbnails/026/781/389/small/gym-interior-background-of-dumbbells-on-rack-in-fitness-and-workout-room-photo.jpg") center/cover no-repeat;
     background-size: cover;
-    padding: 90px 24px;
+    padding: clamp(4rem, 6vw, 8rem) 5%;
     position: relative;
     color: white;
 }
@@ -309,7 +294,7 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(12, 12, 12, 0.6);
+    background: rgba(12,12,12,0.6);
     top: 0;
     left: 0;
 }
@@ -318,20 +303,18 @@ footer {
     position: relative;
     text-align: center;
     z-index: 2;
-    margin-bottom: 30px;
+    margin-bottom: 2rem;
 }
 
 .schedule-header h2 {
-    font-size: 40px;
+    font-size: clamp(2rem, 4vw, 3rem);
     font-weight: 700;
-    margin-bottom: 8px;
 }
 
 .schedule-header p {
     width: 70%;
-    margin: 8px auto 40px;
-    font-size: 16px;
-    opacity: 0.95;
+    margin: 1rem auto 3rem;
+    font-size: clamp(0.9rem, 1.5vw, 1rem);
     color: #f1f1f1;
 }
 
@@ -339,20 +322,19 @@ footer {
     position: relative;
     z-index: 2;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1rem;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 .schedule-box {
-    background: rgba(0,0,0,0.42); /* darker translucent box for contrast */
+    background: rgba(0,0,0,0.42);
     border: 1px solid rgba(255,255,255,0.08);
-    padding: 22px;
+    padding: 1.5rem;
     border-radius: 12px;
     transition: 0.25s ease;
     color: #fff;
-    min-height: 140px;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -365,7 +347,7 @@ footer {
 }
 
 .schedule-box .num {
-    font-size: 28px;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #ff8a50;
     margin-bottom: 6px;
@@ -373,55 +355,93 @@ footer {
 
 .schedule-box .time {
     margin: 4px 0;
-    opacity: 1;
     color: #fff;
     font-weight: 600;
 }
 
 .schedule-box h3 {
     margin: 8px 0;
-    font-size: 20px;
+    font-size: 1.2rem;
     font-weight: 700;
-    color: #fff;
 }
 
 .schedule-box .trainer {
-    opacity: 1;
     color: #ffd9c9;
     margin-top: 6px;
     font-weight: 500;
 }
 
-/* Responsive adjustments for tablets and phones */
-@media (max-width: 1024px) {
-    .schedule-grid { grid-template-columns: repeat(2, 1fr); }
-    .schedule-header p { width: 85%; }
-    .schedule-header h2 { font-size: 34px; }
+/* ======== RESPONSIVE MEDIA QUERIES ======== */
+@media (max-width: 768px) {
+    header {
+        padding: 1rem 3%;
+    }
+
+    .schedule-header p {
+        width: 90%;
+    }
+
+    .schedule-grid {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .schedule-box {
+        padding: 1.2rem;
+    }
+
+    form {
+        max-width: 95%;
+    }
 }
 
-@media (max-width: 600px) {
-    .schedule-grid { grid-template-columns: 1fr; gap: 14px; }
-    .schedule-section { padding: 56px 18px; }
-    .schedule-header p { width: 95%; font-size: 15px; }
-    .schedule-header h2 { font-size: 28px; }
-    .schedule-box { padding: 18px; min-height: 120px; }
-    .schedule-box .num { font-size: 24px; }
-    .schedule-box h3 { font-size: 18px; }
-}
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.5rem;
+    }
 
-/* Extra small phones: tighten spacing and improve readability */
-@media (max-width: 420px) {
-    section { padding: 28px 12px; }
-    .schedule-section { padding: 40px 12px; }
-    .schedule-header h2 { font-size: 22px; }
-    .schedule-header p { font-size: 14px; width: 98%; margin-bottom: 20px; }
-    .schedule-grid { gap: 12px; }
-    .schedule-box { padding: 14px; min-height: unset; align-items: flex-start; }
-    .schedule-box .num { font-size: 20px; }
-    .schedule-box .time { font-size: 14px; }
-    .schedule-box h3 { font-size: 16px; margin-top: 6px; }
-    .schedule-box .trainer { font-size: 14px; }
-    header { padding: 12px 14px; }
-    header h1 { font-size: 20px; }
-    nav ul { gap: 8px; }
+    nav ul {
+        gap: 0.8rem;
+    }
+
+    nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    .schedule-header p {
+        width: 95%;
+        margin: 0.5rem auto 1.5rem;
+    }
+
+    .schedule-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8rem;
+    }
+
+    .schedule-box {
+        padding: 1rem;
+    }
+
+    .schedule-box .num {
+        font-size: 1.2rem;
+    }
+
+    .schedule-box h3 {
+        font-size: 1rem;
+    }
+
+    form {
+        padding: 1.2rem;
+        margin: 0 1rem;
+    }
+
+    form label {
+        margin-top: 0.8rem;
+        font-size: 0.95rem;
+    }
+
+    form input,
+    form textarea {
+        padding: 0.7rem;
+        font-size: 1rem;
+    }
 }
