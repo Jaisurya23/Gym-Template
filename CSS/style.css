@@ -298,7 +298,8 @@ footer {
 /* ======== CLASS SCHEDULE SECTION ======== */
 .schedule-section {
     background: url("https://static.vecteezy.com/system/resources/thumbnails/026/781/389/small/gym-interior-background-of-dumbbells-on-rack-in-fitness-and-workout-room-photo.jpg") center/cover no-repeat;
-    padding: 90px 60px;
+    background-size: cover;
+    padding: 90px 24px;
     position: relative;
     color: white;
 }
@@ -308,7 +309,7 @@ footer {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: rgba(12, 12, 12, 0.75);
+    background: rgba(12, 12, 12, 0.6);
     top: 0;
     left: 0;
 }
@@ -317,18 +318,21 @@ footer {
     position: relative;
     text-align: center;
     z-index: 2;
+    margin-bottom: 30px;
 }
 
 .schedule-header h2 {
     font-size: 40px;
     font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .schedule-header p {
-    width: 60%;
-    margin: 15px auto 50px;
-    font-size: 18px;
-    opacity: 0.9;
+    width: 70%;
+    margin: 8px auto 40px;
+    font-size: 16px;
+    opacity: 0.95;
+    color: #f1f1f1;
 }
 
 .schedule-grid {
@@ -336,61 +340,71 @@ footer {
     z-index: 2;
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 25px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .schedule-box {
-    background: rgba(255, 87, 34, 0.15);
-    border: 2px solid rgba(255, 87, 34, 0.4);
-    padding: 25px;
-    border-radius: 10px;
-    transition: 0.3s;
+    background: rgba(0,0,0,0.42); /* darker translucent box for contrast */
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 22px;
+    border-radius: 12px;
+    transition: 0.25s ease;
     color: #fff;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .schedule-box:hover {
-    border-color: #ff5722;
-    background: rgba(255, 87, 34, 0.25);
+    border-color: rgba(255,87,34,0.85);
+    background: linear-gradient(180deg, rgba(255,87,34,0.08), rgba(0,0,0,0.45));
     transform: translateY(-6px);
 }
 
 .schedule-box .num {
-    font-size: 32px;
-    font-weight: 600;
-    color: #ff5722;
+    font-size: 28px;
+    font-weight: 700;
+    color: #ff8a50;
+    margin-bottom: 6px;
 }
 
 .schedule-box .time {
-    margin: 6px 0;
+    margin: 4px 0;
     opacity: 1;
     color: #fff;
+    font-weight: 600;
 }
 
 .schedule-box h3 {
-    margin: 10px 0;
-    font-size: 22px;
+    margin: 8px 0;
+    font-size: 20px;
     font-weight: 700;
     color: #fff;
 }
 
 .schedule-box .trainer {
     opacity: 1;
-    color: #ffb399;
+    color: #ffd9c9;
+    margin-top: 6px;
+    font-weight: 500;
 }
 
-/* Responsive */
-@media (max-width: 900px) {
-    .schedule-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
+/* Responsive adjustments for tablets and phones */
+@media (max-width: 1024px) {
+    .schedule-grid { grid-template-columns: repeat(2, 1fr); }
+    .schedule-header p { width: 85%; }
+    .schedule-header h2 { font-size: 34px; }
 }
 
 @media (max-width: 600px) {
-    .schedule-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .schedule-header p {
-        width: 90%;
-    }
+    .schedule-grid { grid-template-columns: 1fr; gap: 14px; }
+    .schedule-section { padding: 56px 18px; }
+    .schedule-header p { width: 95%; font-size: 15px; }
+    .schedule-header h2 { font-size: 28px; }
+    .schedule-box { padding: 18px; min-height: 120px; }
+    .schedule-box .num { font-size: 24px; }
+    .schedule-box h3 { font-size: 18px; }
 }
