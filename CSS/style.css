@@ -408,3 +408,20 @@ footer {
     .schedule-box .num { font-size: 24px; }
     .schedule-box h3 { font-size: 18px; }
 }
+
+/* Extra small phones: tighten spacing and improve readability */
+@media (max-width: 420px) {
+    section { padding: 28px 12px; }
+    .schedule-section { padding: 40px 12px; }
+    .schedule-header h2 { font-size: 22px; }
+    .schedule-header p { font-size: 14px; width: 98%; margin-bottom: 20px; }
+    .schedule-grid { gap: 12px; }
+    .schedule-box { padding: 14px; min-height: unset; align-items: flex-start; }
+    .schedule-box .num { font-size: 20px; }
+    .schedule-box .time { font-size: 14px; }
+    .schedule-box h3 { font-size: 16px; margin-top: 6px; }
+    .schedule-box .trainer { font-size: 14px; }
+    header { padding: 12px 14px; }
+    header h1 { font-size: 20px; }
+    nav ul { gap: 8px; }
+}
